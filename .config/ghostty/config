@@ -1,0 +1,54 @@
+command = zsh
+
+# Shell integration
+shell-integration = detect
+shell-integration-features = cursor,sudo,title,no-cursor
+keybind = shift+enter=text:\n
+
+# Terminal features
+# One process for every window, even when launched from a terminal or with
+# arguments (detect, the default, starts a new one then)
+gtk-single-instance = true
+confirm-close-surface = false
+copy-on-select = false
+
+# Font
+font-family = JetBrainsMono Nerd Font
+font-size = 18
+
+# Custom shaders
+custom-shader = shaders/cursor-pulse.glsl
+custom-shader-animation = true
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+cursor-opacity = 0
+cursor-text = cell-foreground
+
+# Disable in-app Ghostty toast notifications
+app-notifications = false
+
+# Window
+background-opacity = 0.75
+scrollbar = never
+window-save-state = never
+window-width = 78
+window-height = 23
+window-padding-x = 24
+window-padding-y = 24
+window-decoration = false
+window-theme = auto
+
+# Key bindings for common actions
+keybind = ctrl+t=new_tab
+keybind = ctrl+plus=increase_font_size:1
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+zero=reset_font_size
+
+# Colors from pywal16's built-in ghostty template, then colors.conf's overrides
+# of some of them (included files are read after this one, in order, so the
+# overrides can't go in this file). The ? skips wal's file without an error until
+# wal has applied a colorscheme, or when pywal16 isn't installed
+config-file = ?~/.cache/wal/ghostty.conf
+config-file = colors.conf
